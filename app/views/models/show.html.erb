@@ -9,3 +9,10 @@
 
 <h3>メールアドレス</h3><br>
 <%= @user.email %><br>
+
+<h3>イメージ</h3>
+<% if @user.avatar.attached? %>
+    <%= image_tag(@user.avatar,:size => "260x180") %>
+<% end %>
+<br>
+<%= link_to "Edit", edit_model_registration_path %>
