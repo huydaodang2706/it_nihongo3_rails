@@ -7,7 +7,10 @@
 
 <p>
   <strong>Number of pages:</strong>
-  <%= @book.number_of_pages %>
+  <%= @book.number_of_pages %> <br>
+  <strong>Image of books:</strong> <br>
+  <%= image_tag(@book.image,:size => "260x180") %>
+
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
