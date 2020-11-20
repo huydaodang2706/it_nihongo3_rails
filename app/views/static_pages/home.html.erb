@@ -1,0 +1,9 @@
+<% if !current_model %>
+<%= link_to "サインイン", new_model_session_path %>
+<%= link_to "アカウント登録", new_model_registration_path %>
+<% elsif %>
+<%= link_to "サインアウト", destroy_model_session_path, method: :delete %>
+<h3>こんにちは <%= current_model.email %></h3>
+<% end %>
+<hr>
+<h1>HOME PAGE</h1>
