@@ -9,8 +9,12 @@
   <strong>Number of pages:</strong>
   <%= @book.number_of_pages %> <br>
   <strong>Image of books:</strong> <br>
-  <%= image_tag(@book.image,:size => "260x180") %>
-
+  
+  <% if @book.image.present? %>
+    <%= image_tag(@book.image,:size => "260x180") %>
+  <% end %>
+  <strong>Detail:</strong> <br>
+  <%= @book.detail %> 
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
