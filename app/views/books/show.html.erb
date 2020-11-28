@@ -41,7 +41,7 @@
     Review List
     <ul>
       <% @book_reviews.each do |review| %>
-        <li><%=  review.detail %> (<%= review.model_id %>)</li>
+        <li><%=  review.detail %> (<%= review.model.name %>)</li>
       <% end %>      
     </ul>
 
