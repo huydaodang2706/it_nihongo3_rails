@@ -11,7 +11,7 @@ class BooksController < ApplicationController
   # GET /books/1.json
   def show
     @book_review = BookReview.new
-    @book_reviews = BookReview.all
+    @book_reviews = @book.book_reviews.order(created_at: :desc)
   end
 
   # GET /books/new

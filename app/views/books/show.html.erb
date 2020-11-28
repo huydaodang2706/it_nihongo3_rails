@@ -12,7 +12,7 @@
   
   <% if @book.image.present? %>
     <%= image_tag(@book.image,:size => "260x180") %>
-  <% end %>
+  <% end %> <br>
   <strong>Detail:</strong> <br>
   <%= @book.detail %> 
 </p>
@@ -38,9 +38,13 @@
   <%= hidden_field(:book_review, :book_id, :value => params[:id]) %>
 
   <div>
-    <% @book_reviews.each do |review| %>
-     Review: <%=  review.detail %> <br>
-    <% end %>
+    Review List
+    <ul>
+      <% @book_reviews.each do |review| %>
+        <li><%=  review.detail %> (<%= review.model_id %>)</li>
+      <% end %>      
+    </ul>
+
   </div>
   <div class="actions">
     <%= form.submit %>
